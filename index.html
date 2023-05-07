@@ -7,6 +7,32 @@
     <title>Add Product Form</title>
 </head>
 <body>
-    
+    <h1>Add Skin Care Product</h1>
+    <div id="validation-summary">
+        <p>HEY! Errors go here!</p>
+    </div>
+
+    <form>
+        <label for="name">Name: </label>
+        <input id="name" type="text">
+        <br>
+        <label for="price">Price: </label>
+        <input id="price" type="text">
+        <br>
+        <label for="type">Type: </label>
+        <select id="type">
+            <option>Sun Protectant</option>
+            <option>Moisturizer</option>
+            <option>Retinol</option>
+            <option>Serum</option>
+            <option>Eye Cream</option>
+        </select>
+        <br>
+        <label for="online">Online Only?</label>
+        <input type="checkbox" id="online">
+        <br>
+
+        <input type="button" value="Add New Skincare Product">
+    </form>
 </body>
 </html>
