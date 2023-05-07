@@ -1,0 +1,47 @@
+body {
+    background-color: lavender;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+form {
+    border: 3px solid black;
+    text-align: center;
+}
+
+input {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+select {
+    margin-top: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    margin-bottom: 1em;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 10%;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: lavender;
+    cursor: pointer;
+}
+
+#type {
+    width: 11em;
+}
