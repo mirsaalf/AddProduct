@@ -35,7 +35,7 @@ function isAllDataValid() {
  * Gets all product data from the form and 
  * returns it in a product object
  */
-function getSkinProduct():SkinProduct {
+function getSkinProduct():SkinCare {
     let product = new SkinCare();
     let nameInput =
         <HTMLInputElement>document.getElementById("name");
@@ -61,7 +61,25 @@ function getSkinProduct():SkinProduct {
     return product;
 }
 
-function displayProduct(myProduct:SkinCareProduct:void) {
-    //TODO: Display product below the form
+function displayProduct(myProduct:SkinCare):void {
+    let displayDiv = document.getElementById("display");
+
+    // Create h2 with product name
+    let productHeading = document.createElement("h2");
+    productHeading.innerText = myProduct.name;
+
+    // Create paragraph with product details
+    let productInfo = document.createElement("p");
+    let notOnlineDisplay = "";
+    if (myProduct.isOnlineOnly) {
+        notOnlineDisplay = "not ";
+    }
+    productInfo.innerText = myProduct.name + " is a " +
+        myProduct.type + ". It costs " + myProduct.price + 
+        ". It is " + notOnlineDisplay + "only available online";
+
+    // add h2 in the <div id="display">
+    displayDiv.appendChild(productHeading);
+    displayDiv.appendChild(productInfo);
 }
 

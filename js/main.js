@@ -33,5 +33,18 @@ function getSkinProduct() {
     }
     return product;
 }
-function displayProduct(myProduct, ) {
+function displayProduct(myProduct) {
+    var displayDiv = document.getElementById("display");
+    var productHeading = document.createElement("h2");
+    productHeading.innerText = myProduct.name;
+    var productInfo = document.createElement("p");
+    var notOnlineDisplay = "";
+    if (myProduct.isOnlineOnly) {
+        notOnlineDisplay = "not ";
+    }
+    productInfo.innerText = myProduct.name + " is a " +
+        myProduct.type + ". It costs " + myProduct.price +
+        ". It is " + notOnlineDisplay + "only available online";
+    displayDiv.appendChild(productHeading);
+    displayDiv.appendChild(productInfo);
 }
