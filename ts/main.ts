@@ -18,16 +18,53 @@ window.onload = function() {
     addBtn.onclick = addSkinProduct;
 }
 
+function clearAllErrors() {
+    let errSummary = document.getElementById("validation-summary");
+    errSummary.innerText = "";
+}
+
 function addSkinProduct() {
+    clearAllErrors();
     if(isAllDataValid()) {
         let product = getSkinProduct();
         displayProduct(product);
     }
 }
 
-// ADD VALIDATION CODE *****************
 function isAllDataValid() {
-    return true;
+    let isValid = true;
+
+    let name = 
+        (<HTMLInputElement>document.getElementById("name")).value;
+    if (name == "") {
+        isValid = false;
+        addErrorMessage("Name is required!");
+    }
+
+    let price = 
+        (<HTMLInputElement>document.getElementById("price")).value;
+    let priceValue = parseFloat(price); 
+    if (price == "" || priceValue == NaN) {
+        isValid = false;
+        addErrorMessage("Price is required!");
+    }
+
+    let type =
+        (<HTMLOptionElement>document.getElementById("type")).value;
+    if (type == "") {
+        isValid = false;
+        addErrorMessage("You must choose a type!");
+    }
+
+    return isValid;
+}
+
+function addErrorMessage(errMsg:string) {
+    let errSummary = document.getElementById("validation-summary");
+    let errItem = document.createElement("li");
+    errItem.innerText = errMsg;
+
+    errSummary.appendChild(errItem);
 }
 
 /**
