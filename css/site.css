@@ -45,3 +45,9 @@ button:hover {
 #type {
     width: 11em;
 }
+
+#validation-summary {
+    text-align: center;
+    list-style: none;
+    color: red;
+}
